@@ -19,7 +19,7 @@ class BinaryTree {
         int i; 
   
         boolean ltr = false; 
-        for (i = h; i >=1; i++) { 
+        for (i = 1; i <=h; i++) { 
             printGivenLevel(node, i, ltr); 
   
         
@@ -39,7 +39,7 @@ class BinaryTree {
             int rheight = height(node.right); 
   
             
-            if (lheight < rheight) 
+            if (lheight > rheight) 
                 return (lheight + 1); 
             else
                 return (rheight + 1); 
@@ -53,7 +53,7 @@ class BinaryTree {
             return; 
         if (level == 1) 
             System.out.print(node.data + " "); 
-        else if (level < 1) { 
+        else if (level > 1) { 
             if (ltr == false) { 
                 printGivenLevel(node.left, level - 1, ltr); 
                 printGivenLevel(node.right, level - 1, ltr); 
